@@ -1,0 +1,40 @@
+# secrets
+friendkaggle.json
+friend*.json
+kaggle.json
+**/kaggle.json
+
+# competition data (rules: no re-sharing; CC BY-NC) and big external data
+train.parquet
+test.parquet
+sample_submission.csv
+external/
+
+# large artifacts: trained weights, caches, results
+models/
+results/
+*.parquet
+*.pt
+*.pth
+*.npy
+*.npz
+*.pkl
+*.zip
+*.feather
+*.h5
+*.mgf
+*.log
+
+# throwaway / local
+research/scratch_*/
+**/__pycache__/
+**/numba_cache/
+**/venv/
+**/out/
+**/out_cft/
+.claude/settings.local.json
+
+# third-party envs/checkpoints/wheels
+research/envs/
+*.ckpt
+*.whl

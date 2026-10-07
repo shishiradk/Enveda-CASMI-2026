@@ -1,0 +1,29 @@
+{
+ "id": "shishiradhikari11/casmi-e6-pubchem-channel",
+ "title": "CASMI E6 PubChem channel",
+ "code_file": "casmi_e6.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_tpu": false,
+ "enable_internet": false,
+ "machine_shape": "NvidiaTeslaT4",
+ "dataset_sources": [
+  "prvsiyan/casmi26-fp-models-v2",
+  "prvsiyan/casmi26-ranker-features",
+  "megayak/casmi26-simulated-ranker-rows",
+  "prvsiyan/coconut-casmi26-candidates",
+  "shishiradhikari11/casmi-bio-clean",
+  "metric/rdkit-2026-3-3-wheel",
+  "shishiradhikari11/casmi-fm-runner",
+  "shishiradhikari11/casmi-v2-pubchem",
+  "shishiradhikari11/casmi-rdkit2025-cp313",
+  "shishiradhikari11/casmi-e6-pcnets"
+ ],
+ "competition_sources": [
+  "enveda-CASMI26-molecule-id-mass-spectra"
+ ],
+ "kernel_sources": [],
+ "model_sources": []
+}

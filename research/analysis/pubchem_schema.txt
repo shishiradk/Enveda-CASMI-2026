@@ -1,0 +1,4 @@
+('ik', 'VARCHAR', 'YES', None, None, None)
+('cid', 'BIGINT', 'YES', None, None, None)
+('smiles', 'VARCHAR', 'YES', None, None, None)
+('mass', 'DOUBLE', 'YES', None, None, None)

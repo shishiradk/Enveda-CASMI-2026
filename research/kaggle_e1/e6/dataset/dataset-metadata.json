@@ -1,0 +1,10 @@
+{
+ "title": "casmi-e6-pcnets",
+ "id": "shishiradhikari11/casmi-e6-pcnets",
+ "licenses": [
+  {
+   "name": "MIT"
+  }
+ ],
+ "description": "E6 PubChem channel for CASMI 2026: e6_channel.py and two fingerprint nets trained by our team on the competition train data only."
+}

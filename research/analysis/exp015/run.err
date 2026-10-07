@@ -1,0 +1,16 @@
+C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\networkx\utils\backends.py:541: RuntimeWarning: networkx backend defined more than once: nx_loopback
+  backends = _get_backends("networkx.backends")
+C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\networkx\utils\backends.py:541: RuntimeWarning: networkx backend defined more than once: nx_loopback
+  backends = _get_backends("networkx.backends")
+C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\networkx\utils\backends.py:541: RuntimeWarning: networkx backend defined more than once: nx_loopback
+  backends = _get_backends("networkx.backends")
+C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\networkx\utils\backends.py:541: RuntimeWarning: networkx backend defined more than once: nx_loopback
+  backends = _get_backends("networkx.backends")
+C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\networkx\utils\backends.py:541: RuntimeWarning: networkx backend defined more than once: nx_loopback
+  backends = _get_backends("networkx.backends")
+C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\networkx\utils\backends.py:541: RuntimeWarning: networkx backend defined more than once: nx_loopback
+  backends = _get_backends("networkx.backends")
+C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\networkx\utils\backends.py:541: RuntimeWarning: networkx backend defined more than once: nx_loopback
+  backends = _get_backends("networkx.backends")
+C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\networkx\utils\backends.py:541: RuntimeWarning: networkx backend defined more than once: nx_loopback
+  backends = _get_backends("networkx.backends")

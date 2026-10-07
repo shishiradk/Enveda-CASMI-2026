@@ -1,0 +1,61 @@
+{
+  "feasibility": {
+    "full_397_margin_persisted": false,
+    "why": "No persisted artifact stores per-candidate scores for the full population. exp001_checkpoint per_query_diagnostics has no scores; exp002_checkpoint per_query_results has only best_true_molecule_score_b. Only exp003_inspection.json (92 queries) stores correct_score + top_wrong_overall.score. Variant A candidate lists are also not persisted.",
+    "needed_for_full": "Read-only re-scoring pass or a future run that persists top-25 (molecule, score) lists per query."
+  },
+  "exp003_subset": {
+    "n": 92,
+    "n_negative_margin": 92,
+    "all_negative": true,
+    "margin_stats": {
+      "min": -0.636775,
+      "p10": -0.352143,
+      "p25": -0.22711,
+      "median": -0.063083,
+      "p75": -0.004946,
+      "p90": -0.000323,
+      "max": -5.6e-05
+    },
+    "by_top_wrong_adduct_vs_query": {
+      "same_adduct": {
+        "min": -0.636775,
+        "p10": -0.36259,
+        "p25": -0.256233,
+        "median": -0.071,
+        "p75": -0.003774,
+        "p90": -0.000132,
+        "max": -6.1e-05
+      },
+      "cross_adduct": {
+        "min": -0.59459,
+        "p10": -0.350534,
+        "p25": -0.21895,
+        "median": -0.052698,
+        "p75": -0.009475,
+        "p90": -0.001266,
+        "max": -5.6e-05
+      }
+    },
+    "by_top_wrong_source": {
+      "already_in_variant_a": {
+        "min": -0.636775,
+        "p10": -0.376962,
+        "p25": -0.28573,
+        "median": -0.118364,
+        "p75": -0.005353,
+        "p90": -0.001376,
+        "max": -6.1e-05
+      },
+      "newly_admitted_by_b": {
+        "min": -0.59459,
+        "p10": -0.343582,
+        "p25": -0.207464,
+        "median": -0.04494,
+        "p75": -0.00427,
+        "p90": -0.000216,
+        "max": -5.6e-05
+      }
+    }
+  }
+}

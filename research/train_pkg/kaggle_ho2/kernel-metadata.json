@@ -1,0 +1,18 @@
+{
+ "id": "akritirijal04/casmi-fp-train-ho2",
+ "title": "casmi-fp-train-ho2",
+ "code_file": "casmi_fp_train.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_tpu": false,
+ "enable_internet": false,
+ "dataset_sources": [
+  "akritirijal04/casmi-train-pkg-ho2"
+ ],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": [],
+ "machine_shape": "NvidiaTeslaT4"
+}

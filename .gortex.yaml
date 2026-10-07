@@ -1,0 +1,15 @@
+exclude:
+    - results/
+    - external/
+    - databases/
+    - models/
+    - final/
+    - "*.parquet"
+    - "*.duckdb"
+    - "*.duckdb.wal"
+    - "*.whl"
+    - "*.csv"
+    - "*.pyc"
+    - "*.log"
+    - "*.err"
+    - "*.pid"

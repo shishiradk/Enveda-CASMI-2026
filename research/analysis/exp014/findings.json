@@ -1,0 +1,215 @@
+{
+ "design_q": "does explicit fragmentation-aware feature engineering provide information the current spectrum-kNN representation is missing?",
+ "smoke": true,
+ "build": {
+  "n_train": 250,
+  "n_val": 60,
+  "n_target_spectra": 9602,
+  "target_spectra_covered": 1,
+  "pool_iks_with_refs_train": 70427,
+  "pool_iks_with_refs_lib": 71271,
+  "rid_spec": 5736,
+  "sec": 552.2
+ },
+ "ablation_lgb": {
+  "mass": {
+   "fit_s": 1.9,
+   "tr_auc": 0.8739,
+   "val_auc": 0.5914
+  },
+  "mass+peak": {
+   "fit_s": 1.7,
+   "tr_auc": 1.0,
+   "val_auc": 0.9367
+  },
+  "mass+peak+int": {
+   "fit_s": 3.0,
+   "tr_auc": 1.0,
+   "val_auc": 0.965
+  },
+  "mass+peak+int+nl": {
+   "fit_s": 2.3,
+   "tr_auc": 1.0,
+   "val_auc": 0.9647
+  },
+  "mass+peak+int+nl+mc": {
+   "fit_s": 2.3,
+   "tr_auc": 1.0,
+   "val_auc": 0.9729
+  },
+  "all_features": {
+   "fit_s": 2.0,
+   "tr_auc": 1.0,
+   "val_auc": 0.9955
+  }
+ },
+ "models": {
+  "LR": {
+   "fit_s": 0.5,
+   "tr_auc": 0.9831,
+   "val_auc": 0.9896
+  },
+  "ET": {
+   "fit_s": 2.2,
+   "tr_auc": 0.9999,
+   "val_auc": 0.9958
+  },
+  "RF": {
+   "fit_s": 3.5,
+   "tr_auc": 1.0,
+   "val_auc": 0.9955
+  },
+  "LGB": {
+   "fit_s": 2.1,
+   "tr_auc": 1.0,
+   "val_auc": 0.9955
+  },
+  "MLP": {
+   "fit_s": 7.5,
+   "tr_auc": 0.9901,
+   "val_auc": 0.9744
+  },
+  "XGB": {
+   "fit_s": 2.7,
+   "tr_auc": 1.0,
+   "val_auc": 0.995
+  }
+ },
+ "eval_summary": {
+  "COCONUT|T1_np": {
+   "n": 243,
+   "pool_median": 37.0,
+   "E14_rr25": 0.1248,
+   "E14_r@1": 0.0359,
+   "E14_r@10": 0.3484,
+   "E14_median_rank": 20.0,
+   "B3_rr25": 0.4998,
+   "B3_r@1": 0.3395,
+   "B3_r@10": 0.7942,
+   "B3_median_rank": 2.0,
+   "B1_rr25": 0.1935,
+   "B1_r@1": 0.0884,
+   "B1_r@10": 0.4431,
+   "B1_median_rank": 15.5,
+   "E14_wins_rr25_vs_B3": 36,
+   "E14_wins_r@1_vs_B3": 7,
+   "b1-10_n": 49,
+   "b1-10_E14_rr25": 0.4014,
+   "b1-10_B3_rr25": 0.7084,
+   "b11-100_n": 139,
+   "b11-100_E14_rr25": 0.0745,
+   "b11-100_B3_rr25": 0.4718,
+   "b101-1k_n": 55,
+   "b101-1k_E14_rr25": 0.0052,
+   "b101-1k_B3_rr25": 0.3847,
+   "hard_n": 243,
+   "hard_E14_rr25": 0.1248,
+   "hard_B3_rr25": 0.4998
+  },
+  "COCONUT+train|T1_np": {
+   "n": 244,
+   "pool_median": 50.0,
+   "E14_rr25": 0.0781,
+   "E14_r@1": 0.0153,
+   "E14_r@10": 0.2477,
+   "E14_median_rank": 30.5,
+   "B3_rr25": 0.4565,
+   "B3_r@1": 0.293,
+   "B3_r@10": 0.7664,
+   "B3_median_rank": 3.0,
+   "B1_rr25": 0.1578,
+   "B1_r@1": 0.066,
+   "B1_r@10": 0.3833,
+   "B1_median_rank": 21.25,
+   "E14_wins_rr25_vs_B3": 28,
+   "E14_wins_r@1_vs_B3": 4,
+   "b1-10_n": 37,
+   "b1-10_E14_rr25": 0.3235,
+   "b1-10_B3_rr25": 0.6776,
+   "b11-100_n": 135,
+   "b11-100_E14_rr25": 0.0514,
+   "b11-100_B3_rr25": 0.4553,
+   "b101-1k_n": 72,
+   "b101-1k_E14_rr25": 0.0021,
+   "b101-1k_B3_rr25": 0.345,
+   "hard_n": 244,
+   "hard_E14_rr25": 0.0781,
+   "hard_B3_rr25": 0.4565
+  },
+  "COCONUT+train|T2_tims": {
+   "n": 1000,
+   "pool_median": 64.0,
+   "E14_rr25": 0.0317,
+   "E14_r@1": 0.0013,
+   "E14_r@10": 0.1013,
+   "E14_median_rank": 50.5,
+   "B3_rr25": 0.4902,
+   "B3_r@1": 0.33,
+   "B3_r@10": 0.787,
+   "B3_median_rank": 2.0,
+   "B1_rr25": 0.1094,
+   "B1_r@1": 0.0314,
+   "B1_r@10": 0.2985,
+   "B1_median_rank": 26.5,
+   "E14_wins_rr25_vs_B3": 8,
+   "E14_wins_r@1_vs_B3": 0,
+   "b1-10_n": 75,
+   "b1-10_E14_rr25": 0.2351,
+   "b1-10_B3_rr25": 0.8422,
+   "b11-100_n": 591,
+   "b11-100_E14_rr25": 0.0236,
+   "b11-100_B3_rr25": 0.5456,
+   "b101-1k_n": 334,
+   "b101-1k_E14_rr25": 0.0002,
+   "b101-1k_B3_rr25": 0.3129,
+   "hard_n": 1000,
+   "hard_E14_rr25": 0.0317,
+   "hard_B3_rr25": 0.4902
+  },
+  "VAL": {
+   "n": 60,
+   "mass_mrr25": 0.2194,
+   "mass_r@1": 0.1228,
+   "mass+peak_mrr25": 0.7165,
+   "mass+peak_r@1": 0.6583,
+   "mass+peak+int_mrr25": 0.8274,
+   "mass+peak+int_r@1": 0.7667,
+   "mass+peak+int+nl_mrr25": 0.8318,
+   "mass+peak+int+nl_r@1": 0.7833,
+   "mass+peak+int+nl+mc_mrr25": 0.8142,
+   "mass+peak+int+nl+mc_r@1": 0.7667,
+   "all_features_mrr25": 0.8989,
+   "all_features_r@1": 0.8333,
+   "knn_B3_rr25": 0.4777,
+   "knn_B3_r@1": 0.3167,
+   "mass_B1_rr25": 0.2297,
+   "mass_B1_r@1": 0.1281
+  },
+  "sec": 62.3
+ },
+ "feature_importance": {
+  "mass_diff_ppm": 742,
+  "mass_diff_mDa": 418,
+  "adduct_err_ppm": 666,
+  "best_adduct_err_ppm": 130,
+  "adduct_is_best": 0,
+  "matched_peaks": 548,
+  "frag_overlap_frac": 586,
+  "top10_overlap_frac": 160,
+  "frag_cos_binned": 1112,
+  "int_weighted_frac": 519,
+  "int_total_ratio": 639,
+  "top5_frac_q": 526,
+  "top5_frac_ref": 1072,
+  "entropy_q": 437,
+  "entropy_ref": 918,
+  "peak_ratio": 826,
+  "n_peaks_ref": 814,
+  "nl_overlap_frac": 539,
+  "nl_int_frac": 112,
+  "mod_cos": 1267,
+  "has_spectra": 0,
+  "n_ref_spectra": 349
+ },
+ "note": "smoke outputs live in results/exp014_fragfeats_smoke/; full-run outputs expected after full pipeline"
+}

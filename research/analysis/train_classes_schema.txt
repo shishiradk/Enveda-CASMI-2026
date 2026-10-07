@@ -1,0 +1,8 @@
+('ik', 'VARCHAR', 'YES', None, None, None)
+('smiles', 'VARCHAR', 'YES', None, None, None)
+('formula', 'VARCHAR', 'YES', None, None, None)
+('libs', 'VARCHAR[]', 'YES', None, None, None)
+('n_spec', 'BIGINT', 'YES', None, None, None)
+('n_tims', 'DOUBLE', 'YES', None, None, None)
+('in_coco', 'BOOLEAN', 'YES', None, None, None)
+('in_pc', 'BOOLEAN', 'YES', None, None, None)

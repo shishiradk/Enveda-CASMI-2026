@@ -1,0 +1,17 @@
+{
+ "id": "binayaadhikari13/casmi-fp-train-full-s30",
+ "title": "casmi-fp-train-full-s30",
+ "code_file": "casmi_fp_train.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_tpu": false,
+ "enable_internet": false,
+ "dataset_sources": [
+  "akritirijal04/casmi-train-pkg-full"
+ ],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": []
+}

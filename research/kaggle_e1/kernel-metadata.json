@@ -1,0 +1,25 @@
+{
+  "id": "shishiradhikari11/casmi-e1-eligible-base",
+  "title": "CASMI E1 eligible base",
+  "code_file": "casmi_e1.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "prvsiyan/casmi26-fp-models-v2",
+    "prvsiyan/casmi26-ranker-features",
+    "megayak/casmi26-simulated-ranker-rows",
+    "prvsiyan/coconut-casmi26-candidates",
+    "shishiradhikari11/casmi-bio-clean",
+    "metric/rdkit-2026-3-3-wheel"
+  ],
+  "competition_sources": [
+    "enveda-CASMI26-molecule-id-mass-spectra"
+  ],
+  "kernel_sources": [],
+  "model_sources": []
+}

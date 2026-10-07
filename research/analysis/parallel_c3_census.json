@@ -1,0 +1,147 @@
+{
+ "generated": "2026-09-24",
+ "status": "DESCRIPTIVE CENSUS ONLY - no experiment, no scoring of labels, no src/ change",
+ "method": {
+  "molecule_table": "DuckDB single pass over train.parquet light columns grouped by inchikey14 (formula/smiles via any_value)",
+  "structures": "RDKit 2026.03.6 on normalized_smiles of all 275,810 train molecules: ExactMolWt, Morgan r=2 2048-bit, Murcko scaffold (0 parse failures)",
+  "tanimoto_sample": "1000 timsTOF-bearing molecules, numpy seed 20260924, BulkTanimoto vs all 275,810 train molecules (self excluded)",
+  "test_neutral_mass": "precursor_mz minus adduct mass for the 7 test adducts; window search vs train exact masses",
+  "test_dup_check": "DuckDB join test x train on |dprecursor|<=0.001 and equal peak count, then list equality of ms2_mzs and ms2_normalized_intensities"
+ },
+ "train_molecules": {
+  "total": 275810,
+  "with_timsTOF": 183191,
+  "timsTOF_exactly_1_spectrum": 1373,
+  "timsTOF_>=2_spectra": 181818,
+  "timsTOF_>=5_spectra": 106430,
+  "timsTOF_spectra_per_mol_p25_p50_p75_p90_p99": [
+   4,
+   6,
+   8,
+   11,
+   16
+  ],
+  "inchikey14_with_>1_formula_string": 118
+ },
+ "timsTOF_abs_precursor_error_ppm_p50_p90_p95_p99_p999": [
+  0.98,
+  2.77,
+  3.34,
+  4.4,
+  5.71
+ ],
+ "formula": {
+  "distinct_formulas_all": 51219,
+  "tims_mols_unique_formula_in_train": 6663,
+  "tims_isomers_in_train_pct": {
+   "p25": 11.0,
+   "p50": 35.0,
+   "p75": 93.0,
+   "p90": 168.0,
+   "p99": 380.0
+  },
+  "tims_mols_with_>=1_other_isomer": 176528
+ },
+ "tims_other_mols_within_5ppm": {
+  "p10": 9.0,
+  "p50": 52.0,
+  "p90": 177.0,
+  "p99": 383.0,
+  "zero": 925
+ },
+ "tims_other_mols_within_10ppm": {
+  "p10": 18.0,
+  "p50": 80.0,
+  "p90": 220.0,
+  "p99": 392.0,
+  "zero": 330
+ },
+ "scaffold": {
+  "tims_acyclic_or_empty": 15,
+  "tims_singleton_scaffold": 62526,
+  "tims_scaffold_shared_pct": {
+   "p25": 1.0,
+   "p50": 3.0,
+   "p75": 9.0,
+   "p90": 50.0
+  }
+ },
+ "tanimoto_nn_sample1000": {
+  "maxTc_pct": {
+   "p10": 0.545,
+   "p25": 0.596,
+   "p50": 0.661,
+   "p75": 0.735,
+   "p90": 0.791
+  },
+  "frac_nn>=0.85": 0.035,
+  "frac_nn>=0.70": 0.359,
+  "frac_nn>=0.50": 0.975,
+  "frac_nn<0.40": 0.001,
+  "median_count_>=0.70": 0.0,
+  "median_count_>=0.50": 8.0,
+  "same_mass(\u00b10.01Da)_best_Tc_pct": {
+   "p25": 0.278,
+   "p50": 0.346,
+   "p75": 0.508
+  },
+  "frac_no_other_mol_within_0.01Da": 0.0
+ },
+ "test_mass_coverage": {
+  "all_train_5ppm": {
+   "test_mols_with_zero_train_structure": 0,
+   "of": 400,
+   "median_n_structures": 56.5
+  },
+  "all_train_10ppm": {
+   "test_mols_with_zero_train_structure": 0,
+   "of": 400,
+   "median_n_structures": 80.0
+  },
+  "all_train_20ppm": {
+   "test_mols_with_zero_train_structure": 0,
+   "of": 400,
+   "median_n_structures": 125.5
+  },
+  "timsTOF_train_5ppm": {
+   "test_mols_with_zero_train_structure": 0,
+   "of": 400,
+   "median_n_structures": 50.0
+  },
+  "timsTOF_train_10ppm": {
+   "test_mols_with_zero_train_structure": 0,
+   "of": 400,
+   "median_n_structures": 65.0
+  },
+  "timsTOF_train_20ppm": {
+   "test_mols_with_zero_train_structure": 0,
+   "of": 400,
+   "median_n_structures": 103.0
+  }
+ },
+ "test_multispectrum": {
+  "spectra_per_mol": {
+   "1": 55,
+   "2": 97,
+   "3": 99,
+   "4": 106,
+   "5": 24,
+   "6": 14,
+   "7": 2,
+   "8": 2,
+   "9": 1
+  },
+  "mols_multi_adduct": 108,
+  "max_neutral_mass_spread_Da_p99": 0.0012480000000323344
+ },
+ "local_test_parquet_is_subsample_of_train": {
+  "test_spectra_with_exact_train_duplicate": "1213/1213",
+  "identical_intensities_too": 1213,
+  "duplicate_library": "enveda-180 (all)",
+  "test_molecules_mapping_to_exactly_one_inchikey14": "400/400",
+  "adduct_agreement": 1.0,
+  "extra_train_timsTOF_spectra_per_test_molecule_median": 3,
+  "test_molecules_with_no_other_train_spectra": 106
+ },
+ "test_top1_proxy": "INVALID - 150-spectrum top-1 ModifiedCosine proxy returned 1.0 for every spectrum because every local test spectrum is itself in train; do not use"
+}

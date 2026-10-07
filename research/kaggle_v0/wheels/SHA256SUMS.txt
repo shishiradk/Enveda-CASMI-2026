@@ -1,0 +1,12 @@
+597bfef186b6f60181535a29fbe44865ce137a5079f295b479886c82729d5f3f *deprecated-1.3.1-py2.py3-none-any.whl
+975736b002ed080d124cf81a79cb7e05cb26d6b3f5c7a7b651c0fcce70353aa1 *greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
+b3fd752b41452a6d395c6accc0dffe1b3c08da339f0ac3a3faaabbeb914b7542 *matchms-0.33.1-py3-none-any.whl
+a6614d2aacbe07d3d4b0b6e7c9e9834eae7b8c0127bad4b1127b6fdcebd5cd65 *pickydict-0.5.0-py3-none-any.whl
+b87085dd7273b19d7fc674daa917598f6eb0e21fad788c132a392aa2e8529f6c *psims-1.4.0-py3-none-any.whl
+e936cfed31fa194042ad463be3c803dde5b12ef2f795caf336e3114127c34fa0 *pubchempy-1.0.5-py3-none-any.whl
+aaf85b4f3f64ef42b2c051d7d8b67d22c3a276fe029e5d5bbf17f3915a3bd286 *pyteomics-5.0.1-py3-none-any.whl
+c69a40ad52a2489cf592d55b41f5f6fa482f028341c038f3ed7d6b46834d1d3d *rdkit-2026.3.3-cp312-cp312-manylinux_2_28_x86_64.whl
+4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 *six-1.17.0-py2.py3-none-any.whl
+17d588732694873b38fa530b5d5ca8384a03265bfe994373d9a36ffa0d0d6065 *sparsestack-0.7.1-py3-none-any.whl
+68d994e9b0d0423a02a20039631fa6fcbb7fa829a992f7605025774940305d19 *sqlalchemy-2.0.54-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
+30d11c289b013bf384ff1a1a6553f150d0b855901708a9bef667a5680f8247c9 *wrapt-2.4.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl

@@ -1,0 +1,91 @@
+09:04:10 candidates with an [M+H]+/[M-H]- spectrum: {'PC': 171862, 'C3': 5112}
+09:04:46 keys[cand] 5,112/5,112
+09:08:30 isomers: 25,707,723 (candidate, structure) pairs, 10,400,579 unique SMILES, median 3038 per candidate
+EXIT 127
+=== resume Sun Oct  4 09:09:30 NST 2026
+09:10:48 element graphs[iso] 200,000/10,405,691
+09:11:24 element graphs[iso] 400,000/10,405,691
+09:12:05 element graphs[iso] 600,000/10,405,691
+09:12:48 element graphs[iso] 800,000/10,405,691
+09:13:34 element graphs[iso] 1,000,000/10,405,691
+09:14:10 element graphs[iso] 1,200,000/10,405,691
+09:14:25 element graphs[iso] 1,400,000/10,405,691
+09:14:43 element graphs[iso] 1,600,000/10,405,691
+09:15:02 element graphs[iso] 1,800,000/10,405,691
+09:15:23 element graphs[iso] 2,000,000/10,405,691
+09:15:46 element graphs[iso] 2,200,000/10,405,691
+09:16:04 element graphs[iso] 2,400,000/10,405,691
+09:16:22 element graphs[iso] 2,600,000/10,405,691
+09:16:40 element graphs[iso] 2,800,000/10,405,691
+09:16:57 element graphs[iso] 3,000,000/10,405,691
+09:17:15 element graphs[iso] 3,200,000/10,405,691
+09:17:34 element graphs[iso] 3,400,000/10,405,691
+09:17:55 element graphs[iso] 3,600,000/10,405,691
+09:18:12 element graphs[iso] 3,800,000/10,405,691
+09:18:52 element graphs[iso] 4,000,000/10,405,691
+09:19:35 element graphs[iso] 4,200,000/10,405,691
+09:20:20 element graphs[iso] 4,400,000/10,405,691
+09:21:05 element graphs[iso] 4,600,000/10,405,691
+09:21:59 element graphs[iso] 4,800,000/10,405,691
+09:22:56 element graphs[iso] 5,000,000/10,405,691
+09:23:43 element graphs[iso] 5,200,000/10,405,691
+09:24:24 element graphs[iso] 5,400,000/10,405,691
+09:25:07 element graphs[iso] 5,600,000/10,405,691
+09:25:57 element graphs[iso] 5,800,000/10,405,691
+09:26:50 element graphs[iso] 6,000,000/10,405,691
+09:27:44 element graphs[iso] 6,200,000/10,405,691
+09:28:26 element graphs[iso] 6,400,000/10,405,691
+09:29:11 element graphs[iso] 6,600,000/10,405,691
+09:29:59 element graphs[iso] 6,800,000/10,405,691
+09:30:23 element graphs[iso] 7,000,000/10,405,691
+09:30:40 element graphs[iso] 7,200,000/10,405,691
+09:30:56 element graphs[iso] 7,400,000/10,405,691
+09:31:10 element graphs[iso] 7,600,000/10,405,691
+10:24:32 element graphs[iso] 7,800,000/10,405,691
+10:25:05 element graphs[iso] 8,000,000/10,405,691
+10:25:31 element graphs[iso] 8,200,000/10,405,691
+10:25:53 element graphs[iso] 8,400,000/10,405,691
+10:26:17 element graphs[iso] 8,600,000/10,405,691
+10:26:47 element graphs[iso] 8,800,000/10,405,691
+10:27:14 element graphs[iso] 9,000,000/10,405,691
+10:27:31 element graphs[iso] 9,200,000/10,405,691
+10:27:48 element graphs[iso] 9,400,000/10,405,691
+10:28:03 element graphs[iso] 9,600,000/10,405,691
+10:28:20 element graphs[iso] 9,800,000/10,405,691
+10:28:37 element graphs[iso] 10,000,000/10,405,691
+10:28:56 element graphs[iso] 10,200,000/10,405,691
+10:29:18 element graphs[iso] 10,400,000/10,405,691
+10:29:19 element graphs[iso] 10,405,691/10,405,691
+10:30:11 element-graph prefilter: 25,707,723 isomer pairs -> 121 share the candidate's skeleton
+10:30:18 keys[iso] 119/119
+10:30:18 tautomer check: 5112 C3 candidates, 116 dropped, 4996 verified
+10:30:23 keys[pcsamp] 300/300
+Traceback (most recent call last):
+  File "D:\Enveda-CASMI-2026\research\scripts\c3_s4_build2.py", line 227, in <module>
+    main()
+    ~~~~^^
+  File "D:\Enveda-CASMI-2026\research\scripts\c3_s4_build2.py", line 222, in main
+    write_outputs(c, S, a.workers)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Enveda-CASMI-2026\research\scripts\c3_s4_build2.py", line 192, in write_outputs
+    keep[keep.qset == qset][QCOLS].to_parquet(OUT / f"queries_S4{qset}.parquet", index=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\pandas\core\frame.py", line 4384, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\pandas\core\indexes\base.py", line 6302, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\AppData\Roaming\Python\Python314\site-packages\pandas\core\indexes\base.py", line 6355, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['molecule_id'] not in index"
+EXIT 1
+=== resume Sun Oct  4 11:30:46 NST 2026
+11:31:40 keys[held] 20,000/29,720
+11:31:56 keys[held] 29,720/29,720
+11:31:56 queries: {'C3': 300, 'PC': 300} molecules, {'PC': 1986, 'C3': 1850} spectra; held keys 600 (0 train tautomer aliases)
+11:31:56 done; report: python research/scripts/c3_s4_report.py
+EXIT 0
+=== rerun write stage without dimers Sun Oct  4 11:32:31 NST 2026
+11:32:46 queries: {'C3': 300, 'PC': 300} molecules, {'PC': 1423, 'C3': 1390} spectra; held keys 600 (0 train tautomer aliases)
+11:32:46 done; report: python research/scripts/c3_s4_report.py

@@ -1,0 +1,1 @@
+E6 PubChem channel for CASMI 2026: e6_channel.py (MIT) and two fingerprint networks (e6net_*_full.pt, prvsiyan FPNet architecture) trained by our team on the competition train.parquet only. Released under MIT.

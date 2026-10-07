@@ -1,0 +1,72 @@
+﻿[PASS] artifact inventory missing=[]
+[PASS] cache inventory (results/exp015) missing=[]
+[PASS] eligible fresh targets == 2513 got 2513
+[PASS] sampled == 1000 and sorted 
+[PASS] sampled disjoint from EXP-011/12/13 targets 
+[PASS] sampled subset of eligible 
+[PASS] status_counts == build.info {'ok': 954, 'leak:alias_in_ref,target_or_alias_in_twotower': 43, 'leak:target_or_alias_in_twotower': 2, 'no_query_after_dedup': 1}
+[PASS] ok targets == 954 
+[PASS] ok covered == 838 
+[PASS] manifest neutral-mass medians == T.M 
+[PASS] manif. neutral_mass_molecule == T.M 
+[PASS] ok query spectra == 3147 
+[PASS] no duplicate spectrum rows in manifest 
+[PASS] ok spectra truth_in_pool coverage == 838 
+[PASS] <=4 queries per molecule max 4
+[PASS] sampled overlap with EXP-011/13 targets flagged as appeared_in_exp011_013 
+[PASS] no previous_target flag among ok 
+[PASS] no leak flags among ok targets 
+[PASS] library mix == build.info 
+[PASS] ref_rids length == 298095 
+[PASS] ref_rids == re-derived R_noE180 rids 
+[PASS] R_noE180 molecules == 78707 
+[PASS] R_noE180 sha matches build+audit ad8bb5à42f9d 
+[PASS] cfp row count == parse_ok coconut rows 
+[PASS] cfp dtype uint8 
+[PASS] cfp shape == (rows, FP_BITS/8) 
+[PASS] cfp no NaN 
+[PASS] peaks spectra == 302426 n=302426
+[PASS] peaks total == 31,484,786 
+[PASS] peaks rid sorted unique 
+[PASS] peaks contains full ref+prim+dev {'ref': np.int64(298095), 'prim': np.int64(3147), 'dev': 1184}
+[PASS] peaks_npz.mz == peaks_mz.npy bit-exact 
+[PASS] peaks_npz.it == peaks_it.npy bit-exact 
+[PASS] peaks_npz.pm == peaks_pm.npy bit-exact 
+[PASS] peaks_off == cumsum(len) 
+[PASS] ref neg count == ref_neg.npy length 
+[PASS] variant_results 20 rows (10 variants x 2 pops) (20, 19)
+[PASS] baseline_results = B0 only (2 rows) 
+[PASS] PRIMARY n_ranked == 838 all variants 
+[PASS] DEV n_ranked == 243 all variants 
+[PASS] NaN in variant/baseline/fusion only as B0 empty delta cells 
+[PASS] all delta CIs parse as [mean, lo, hi] 
+[PASS] summary.valid == true and audit.VALID == true 
+[PASS] summary.selection == variant_results DEV MRR 
+[PASS] audit B0_deterministic == true 
+[PASS] audit feature_reproduction_max_abs_diff == 0.0 
+[PASS] audit coconut_fp_indexing note 
+[PASS] audit selection_used_PRIMARY == false (DEV-only selection) 
+[PASS] re-derived PRIMARY pools == 838 
+[PASS] pool_hash re-derived == audit pool_hash_PRIMARY 
+[PASS] query_hash PRIMARY re-derived == audit 
+[PASS] oracle coverage == 838/954 
+[PASS] oracle same_formula_prevalence == 746/838 
+[PASS] median pool == 28.5 28.5
+[PASS] manifest candidate_count == re-derived pool sizes 
+[PASS] per_query enumerates 10 variants x 2 pops set()
+[PASS] per_query counts PRIMARY 838 / DEV 243 per variant 
+[PASS] no NaN in rank/B0 cols 
+[PASS] NaN in per_query only in isomer_error_rate (no-same-formula rows) 
+[PASS] rank_delta == rank - B0_rank 
+[PASS] variant_results == per-query means for MRR/R@1/R@10 
+[PASS] per-query transitions == summary.transitions (all variants/pops) 
+[PASS] fusion overlap sums to n_ranked 
+[PASS] fusion fixes vs regressions net == +31 
+[PASS] fusion_results rows (kNN_B0, two_tower, fusion_50_50) 
+[PASS] fusion kNN_B0 row == B0 PRIMARY row 
+[PASS] fusion MRR/R@1 match summary deltas 
+[PASS] run.log shows completion, traceback-free 
+[PASS] run.err free of Traceback 
+[PASS] build.log + peaks.log present 
+
+70 passed, 0 failed, 10s

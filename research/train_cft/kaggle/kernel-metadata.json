@@ -1,0 +1,18 @@
+{
+ "id": "KAGGLE_USERNAME/casmi-cft-train",
+ "title": "casmi-cft-train",
+ "code_file": "casmi_cft_train.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_tpu": false,
+ "enable_internet": false,
+ "dataset_sources": [
+  "shishiradhikari11/casmi-train-pkg",
+  "shishiradhikari11/casmi-train-cft"
+ ],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": []
+}

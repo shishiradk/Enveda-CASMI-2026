@@ -1,0 +1,6 @@
+{
+  "title": "casmi-v0-wheels",
+  "id": "shishiradhikari11/casmi-v0-wheels",
+  "licenses": [{"name": "other"}],
+  "description": "Offline cp312 manylinux wheels for the CASMI V0 notebook: matchms 0.33.1, rdkit 2026.3.3 (competition metric pin) and matchms dependencies missing from the Kaggle image. Upstream licenses apply."
+}

@@ -1,0 +1,266 @@
+{
+  "rid_reconstruction": "ROW_NUMBER() OVER () - 1, PRAGMA threads=1, verified vs 3 triples",
+  "n_queries": 400,
+  "adjudication": {
+    "v1_vs_mine_disagreements_on_any_same": 112,
+    "v1_disagreement_rids_first20": [
+      733288,
+      468783,
+      153230,
+      642414,
+      102202,
+      100476,
+      899944,
+      897506,
+      190839,
+      954125,
+      798740,
+      976065,
+      960512,
+      642008,
+      722613,
+      324129,
+      320142,
+      390532,
+      395356,
+      410447
+    ],
+    "v2_vs_mine_disagreements_on_any_same": 0,
+    "v2_disagreement_rids": []
+  },
+  "census": {
+    "mine": {
+      "any_same": 388,
+      "any_cross": 251,
+      "all_same": 149,
+      "cross_adduct_only": 12
+    },
+    "v1_audit": {
+      "any_same": 292,
+      "any_cross": 364,
+      "all_same": 36
+    },
+    "v2_audit": {
+      "any_same": 388,
+      "any_cross": 251,
+      "all_same": 149,
+      "cross_adduct_only": 12
+    }
+  },
+  "scenario_ce": {
+    "all_same_adduct_n": 149,
+    "scenario_A_ce_match": 2,
+    "scenario_B_ce_no_match": 147,
+    "ce_match_undefined": 0,
+    "ce_stats": {
+      "train_total_rows": 2539608,
+      "train_ce_null_rows": 337443,
+      "v1_any_different_ce_retained_n": 263,
+      "all_same_query_ce_null_n": 0,
+      "all_same_all_retained_ce_null_n": 0,
+      "A_or_B_defined": 149,
+      "A_rids": [
+        92271,
+        1086336
+      ],
+      "ce_null_pct": 13.29
+    }
+  },
+  "reachability": {
+    "candgen_nohit_n": 12,
+    "candgen_nohit": [
+      6296,
+      8769,
+      27493,
+      156672,
+      318845,
+      395356,
+      410447,
+      431909,
+      626670,
+      689395,
+      733288,
+      1029257
+    ],
+    "your_cross_only_n": 12,
+    "your_cross_only_equals_nohit": true,
+    "nohit_not_cross_only": [],
+    "cross_only_not_nohit": []
+  },
+  "ledger_12": [
+    {
+      "rid": 6296,
+      "true_inchikey14": "ACBPYGWTRFBYMP",
+      "query_adduct": "[2M+H]+",
+      "n_retained_rows": 4,
+      "retained_adducts": [
+        "[M+H]+"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": true,
+      "v2_any_same": false
+    },
+    {
+      "rid": 8769,
+      "true_inchikey14": "ADGUJIPJRXOWSH",
+      "query_adduct": "[2M+CH2O2-H]-",
+      "n_retained_rows": 7,
+      "retained_adducts": [
+        "[2M+Na]+",
+        "[M+H]+",
+        "[M-H]-"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": false,
+      "v2_any_same": false
+    },
+    {
+      "rid": 27493,
+      "true_inchikey14": "ANGIDRSDQGRWQD",
+      "query_adduct": "[M-H]-",
+      "n_retained_rows": 4,
+      "retained_adducts": [
+        "[M+H]+"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": false,
+      "v2_any_same": false
+    },
+    {
+      "rid": 156672,
+      "true_inchikey14": "DFSLKFZMYMXXGX",
+      "query_adduct": "[2M+Na]+",
+      "n_retained_rows": 8,
+      "retained_adducts": [
+        "[2M+H]+",
+        "[M+H]+"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": true,
+      "v2_any_same": false
+    },
+    {
+      "rid": 318845,
+      "true_inchikey14": "HPQRSZWHZSXIAR",
+      "query_adduct": "[2M+Na]+",
+      "n_retained_rows": 5,
+      "retained_adducts": [
+        "[M+H]+",
+        "[M-H]-"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": true,
+      "v2_any_same": false
+    },
+    {
+      "rid": 395356,
+      "true_inchikey14": "JFHPQARHIIJGOD",
+      "query_adduct": "[M+H]+",
+      "n_retained_rows": 3,
+      "retained_adducts": [
+        "[M-H]-"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": true,
+      "v2_any_same": false
+    },
+    {
+      "rid": 410447,
+      "true_inchikey14": "JNVFBVQKGYTOAH",
+      "query_adduct": "[M-H]-",
+      "n_retained_rows": 4,
+      "retained_adducts": [
+        "[M+H]+"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": true,
+      "v2_any_same": false
+    },
+    {
+      "rid": 431909,
+      "true_inchikey14": "JZQMDNUYGZOPNW",
+      "query_adduct": "[M+Na]+",
+      "n_retained_rows": 14,
+      "retained_adducts": [
+        "[2M+Na]+",
+        "[M+CH2O2-H]-",
+        "[M+H]+",
+        "[M-H]-"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": true,
+      "v2_any_same": false
+    },
+    {
+      "rid": 626670,
+      "true_inchikey14": "OBFWTNNDCLKJFP",
+      "query_adduct": "[2M+H]+",
+      "n_retained_rows": 7,
+      "retained_adducts": [
+        "[M+H]+",
+        "[M-H]-"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": false,
+      "v2_any_same": false
+    },
+    {
+      "rid": 689395,
+      "true_inchikey14": "PJAAZAXBSLFNNK",
+      "query_adduct": "[M-H]-",
+      "n_retained_rows": 4,
+      "retained_adducts": [
+        "[M+H]+"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": false,
+      "v2_any_same": false
+    },
+    {
+      "rid": 733288,
+      "true_inchikey14": "QHALUOAFNBWZED",
+      "query_adduct": "[2M+Na]+",
+      "n_retained_rows": 6,
+      "retained_adducts": [
+        "[M+H]+",
+        "[M-H]-"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": true,
+      "v2_any_same": false
+    },
+    {
+      "rid": 1029257,
+      "true_inchikey14": "XGQSLHOHBLGVCV",
+      "query_adduct": "[M+H]+",
+      "n_retained_rows": 4,
+      "retained_adducts": [
+        "[2M+H]+",
+        "[M-H]-"
+      ],
+      "cross_adduct_only": true,
+      "v1_any_same": true,
+      "v2_any_same": false
+    }
+  ],
+  "exp003_q4": {
+    "n": 92,
+    "correct_is_same_adduct": 90,
+    "correct_candidate_was_in_variant_a": 90,
+    "top_wrong_same_adduct": 38,
+    "top_wrong_cross_adduct": 54,
+    "top_wrong_in_variant_a": 35,
+    "top_wrong_new_in_b": 57,
+    "top_wrong_adduct_eq_correct_adduct": 39
+  },
+  "q5_margin": {
+    "exp003_subset_n": 92,
+    "margins_computable_n": 92,
+    "median_margin": -0.061,
+    "min": -0.6368,
+    "max": -0.0001,
+    "n_negative_margin": 92,
+    "full_397_margin_persisted": false,
+    "why": "exp001_checkpoint per_query_diagnostics has no scores; exp002 per_query_results has only best_true_molecule_score_b (no per-candidate/wrong-molecule scores). Only exp003_inspection (92 selected queries) has correct_score + top_wrong score."
+  }
+}

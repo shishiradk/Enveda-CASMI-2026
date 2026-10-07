@@ -1,0 +1,17 @@
+{
+ "id": "KAGGLE_USERNAME/casmi-fp-train-ho1",
+ "title": "casmi-fp-train-ho1",
+ "code_file": "casmi_fp_train.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_tpu": false,
+ "enable_internet": false,
+ "dataset_sources": [
+  "shishiradhikari11/casmi-train-pkg"
+ ],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": []
+}

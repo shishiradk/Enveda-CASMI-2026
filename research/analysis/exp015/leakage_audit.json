@@ -1,0 +1,29 @@
+{
+ "feature_reproduction_max_abs_diff": 0.0,
+ "B0_deterministic": true,
+ "pools_identical_across_variants": true,
+ "pool_hash_PRIMARY": "f2c46e2f22090579141fb539b3dfb9eb28cbbd10582fe05cb4138a01966b6580",
+ "pool_hash_DEV": "2efae89bba37efe33b045fd22d9cc8c4d55dfdc0ba7c0e2d2df9c16433172d80",
+ "query_hash_PRIMARY": "f957d90033ac548f60a3a3b618c5767c9521df631f1a88e5526e72f3e28bd70e",
+ "query_hash_DEV": "92e354f8db69734d25d35e9f71709c9f4c7f95e2d62a21c2e44613c557cd54b6",
+ "accepted_targets_with_any_leak_flag": 0,
+ "excluded_targets_by_reason": {
+  "ok": 954,
+  "leak:alias_in_ref,target_or_alias_in_twotower": 43,
+  "leak:target_or_alias_in_twotower": 2,
+  "no_query_after_dedup": 1
+ },
+ "query_spectra_removed_duplicate_in_ref": 15,
+ "R_noE180": {
+  "spectra": 298095,
+  "molecules": 78707,
+  "sha256_sorted_rids": "ad8bb53eb7303d76abd5a23ad15c71344eb696cb10053fccc8d13c17234f929d"
+ },
+ "coconut_fp_indexing": "parse_ok-filtered (EXP-012 bug not reproduced)",
+ "selection_used_PRIMARY": false,
+ "seeds": {
+  "holdout": 20260927,
+  "bootstrap": 20260927
+ },
+ "VALID": true
+}

@@ -1,0 +1,10 @@
+{
+ "title": "casmi-e7-c3assets",
+ "id": "shishiradhikari11/casmi-e7-c3assets",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0"
+  }
+ ],
+ "description": "E7 Class-3 channel for CASMI 2026: our generator code (MIT) and structure assets derived from the competition train structures and COCONUT (CC BY 4.0). See README.md."
+}
