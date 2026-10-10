@@ -811,3 +811,12 @@ mu 0.15 (+0.010). Our FM bench (`results/bench/fm/analysis.txt`) does **not** fa
 **E7 v9 leaderboard (FACT, 2026-10-08):** 0.363 vs E6 0.360 (+0.003; DEC-010 expected +0.005 to +0.015; within LB noise). New best eligible score. The Class-3 block at ranks 4-8 does no harm and gains little.
 
 **DEC-014 result (FACT, 2026-10-09):** v4n rebuilt engine e9-sub1 v4 (our engine + R-A + ranker_v0, no FM/PubChem) scored **0.341** on the public LB (his v1 engine + ranker: 0.354). Kaggle CPU 2.2 s/mol. The first hang (v2) came from workers crashing at init on a missing pool_fp_raw.npy, which multiprocessing respawns forever; the notebook now runs a smoke test first.
+
+**DEC-014 result 2 (FACT, 2026-10-10):** E9 = E7 v9 + rebuilt v4n engine (R-A + ranker_v0), RRF 1.0/0.6/offset 3, scored **0.379** public (E7 0.363; engine alone 0.341). Public LB that day: 1st 0.484, 5th 0.459, 11th 0.449 (our eligible rank is far below the prize line; DEC-014 stays right on eligibility, wrong to expect it to reach the prize alone).
+E10 (`casmi-e10-fullnets`) = E9 with the engine's networks swapped to full-data F-A + F-B (11,199-bit tables); submit status: pending.
+Cloud review of E9 (verified by me): visible test.parquet is placeholder train data and the hidden set is ~400 molecules, 157-1,159 Da (visible max precursor is only 440), so size/timeouts are low risk. Open items, by value:
+ 1. SV check that RRF 1.0/0.6 does not displace E7's correct top-1 (DEC-008 failure mode; visible test cannot show it).
+ 2. Run E7's forward models on the fused top ~40, not before fusion (rebuilt-arm-only candidates get no FM score now).
+ 3. Rebuilt pool stops at 480 Da (548,856 of ~712k rows); hidden masses reach 1,159 Da. Finish pool build if the shipped tables are the partial pool.
+ 4. Drop padded rows (n_engine in diag) before fusing: 25/400 visible rows padded, 7 with <10 real picks.
+ 5. Hardening only: derive test path from the competition mount; per-molecule key reuse; time budget = limit - elapsed.
