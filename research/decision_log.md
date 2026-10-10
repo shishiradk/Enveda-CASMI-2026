@@ -820,3 +820,7 @@ Cloud review of E9 (verified by me): visible test.parquet is placeholder train d
  3. Rebuilt pool stops at 480 Da (548,856 of ~712k rows); hidden masses reach 1,159 Da. Finish pool build if the shipped tables are the partial pool.
  4. Drop padded rows (n_engine in diag) before fusing: 25/400 visible rows padded, 7 with <10 real picks.
  5. Hardening only: derive test path from the competition mount; per-molecule key reuse; time budget = limit - elapsed.
+**DEC-014 follow-up (FACT, 2026-10-10, `research/scratch/sv_fusion_check.py`):**
+ - Item 3 CLOSED: shipped pool is 705,663 rows, COCONUT to 1,300 Da (the 548,856-row figure in engine/README.md is stale). No heavy-molecule gap.
+ - Item 1 on SV (400 masked-library molecules; E6-merged lists as proxy for E7's primary list; reproduces E6 0.9211): rebuilt engine alone 0.9489; RRF 1.0/0.6 -> 0.9339 (+0.0128), top-1 lost 0, gained 8; w=0.3 +0.0032, w=1.0 +0.0238. Pinning E6's top-3 removes all gain (-0.0001); protecting on lib sim >=0.9 costs 0.0008.
+   CAVEAT (INFERENCE): SV is the library-supported regime, where the engine beats E6 (0.949 vs 0.921), the opposite of the hidden set (engine 0.341 vs E7 0.363). SV shows no displacement where E6's top-1 is right; it cannot tune weights for the hidden regime. Do not tune RRF weights on SV or on the LB.
