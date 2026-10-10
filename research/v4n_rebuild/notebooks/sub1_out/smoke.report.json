@@ -1,0 +1,25 @@
+{
+ "test": "/kaggle/input/competitions/enveda-CASMI26-molecule-id-mass-spectra/test.parquet",
+ "ckpt": [
+  "/kaggle/input/casmi-v4n-models/cft_hoR_a.pt"
+ ],
+ "ranker": "/kaggle/input/casmi-v4n-models/ranker_v0.pkl",
+ "clean": true,
+ "rdkit": "2026.03.3",
+ "molecules": 3,
+ "rows_25": 3,
+ "rows_25_unique": 3,
+ "rows_25_valid": 3,
+ "rows_padded": 0,
+ "errors": 0,
+ "sec_load_and_run": 55.6,
+ "sec_total": 69.1,
+ "wall_s_per_mol": 18.525,
+ "worker_s_per_mol": {
+  "mean": 12.37,
+  "median": 4.62,
+  "p90": 24.62,
+  "max": 29.6
+ },
+ "n_cand_median": 188.0
+}

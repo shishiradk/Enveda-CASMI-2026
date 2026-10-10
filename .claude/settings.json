@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python -c ' *)",
-      "Bash(PYTHONIOENCODING=utf-8 python -c ' *)"
+      "Bash(PYTHONIOENCODING=utf-8 python -c ' *)",
+      "PowerShell(Get-ChildItem -Path \"D:\\\\Enveda-CASMI-2026\\\\models\" -Directory | Where-Object {$_.Name -match \"\\(cft|hor\\)\" } | Select-Object Name, LastWriteTime)"
     ]
   }
 }

@@ -1,0 +1,79 @@
+{
+ "n_molecules": 400,
+ "n_without_covered_spectrum": 29,
+ "n_covered_but_no_formula_group": 3,
+ "n_molecules_sent": 368,
+ "n_candidates_sent": 18617,
+ "topn": 60,
+ "lams": {
+  "ice": 0.5,
+  "gl": 0.5
+ },
+ "protect_lib": 0.6,
+ "n_candidates_protected": 812,
+ "budget_sec": 5400,
+ "adducts": [
+  "[M+H]+",
+  "[M+Na]+"
+ ],
+ "instrument": "QTOF",
+ "models": {
+  "gl": {
+   "status": "ok",
+   "device": "cuda:0",
+   "rdkit": "2025.03.6",
+   "torch": "2.11.0+cu128",
+   "batch_size": 64,
+   "load_sec": 13.92,
+   "elapsed_sec": 1013.77,
+   "wall_sec": 1016.1,
+   "n_predictions": 47169,
+   "predict_sec": 951.43,
+   "pred_per_sec": 49.577,
+   "molecules_done": 368,
+   "n_molecules_covered": 368,
+   "out_of_time": false,
+   "reasons": {},
+   "exit": 0,
+   "n_candidates_scored": 18617,
+   "n_candidates_unscored": 0,
+   "n_molecules_with_scores": 368,
+   "n_molecules_without_scores": 0
+  },
+  "ice": {
+   "status": "ok",
+   "device": "cuda:0",
+   "rdkit": "2025.03.6",
+   "torch": "2.11.0+cu128",
+   "batch_size": 64,
+   "load_sec": 10.05,
+   "elapsed_sec": 1254.85,
+   "wall_sec": 1257.0,
+   "n_predictions": 47169,
+   "predict_sec": 1159.4,
+   "pred_per_sec": 40.684,
+   "molecules_done": 368,
+   "n_molecules_covered": 368,
+   "out_of_time": false,
+   "reasons": {},
+   "exit": 0,
+   "n_candidates_scored": 18617,
+   "n_candidates_unscored": 0,
+   "n_molecules_with_scores": 368,
+   "n_molecules_without_scores": 0
+  }
+ },
+ "n_molecules_with_covered_group": 368,
+ "formula_groups": {
+  "groups": 1169,
+  "groups_covered": 1169,
+  "groups_changed": 833,
+  "members_covered": 18617
+ },
+ "n_top1_changed": 0,
+ "n_top25_order_changed": 360,
+ "n_top25_set_changed": 326,
+ "stage_sec": 2281.8,
+ "status": "ok",
+ "total_sec": 2281.9
+}

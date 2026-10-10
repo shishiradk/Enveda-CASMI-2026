@@ -1,0 +1,22 @@
+{
+ "id": "shishiradhikari11/casmi-v4n-rebuilt-e9-sub1",
+ "title": "casmi v4n rebuilt e9 sub1",
+ "code_file": "casmi_v4n_rebuilt_e9_sub1.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": false,
+ "enable_tpu": false,
+ "enable_internet": false,
+ "dataset_sources": [
+  "shishiradhikari11/casmi-v4n-engine-code",
+  "shishiradhikari11/casmi-v4n-engine-tables",
+  "shishiradhikari11/casmi-v4n-models",
+  "shishiradhikari11/casmi-rdkit2026-cp313"
+ ],
+ "competition_sources": [
+  "enveda-CASMI26-molecule-id-mass-spectra"
+ ],
+ "kernel_sources": [],
+ "model_sources": []
+}

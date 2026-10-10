@@ -746,3 +746,68 @@ add about +0.002. **Recommendation: cancel both** (website only; the CLI has no 
 kernel-metadata now points at the full package, if they are ever re-pushed.
 **Binaya's laptop** package was also seed 30 on ho1 → changed to full data, `--seed_offset 50 --tag fulls50`
 (`research/train_pkg/casmi-binaya.zip` rebuilt, 883 MB, held_keys 0).
+
+---
+
+## DEC-013 (2026-10-07 afternoon): E7 v6 scored 0.320 because the notebook RDKit fell back to 2025.03.6; v7 pins 2026.03.3
+
+**FACT.**
+- Submission 56904156 (E7 v6) scored **0.320**, against E6's 0.360. E7's insertions at ranks 4-8 can cost at most ~0.004.
+- E6 live kernel (`research/kaggle_e1/e6_live/out`) vs E7 v6 (`research/kaggle_e1/e7/v6_output`) on the visible test:
+  engine lists identical **3/400**, top-1 identical 400/400, submission top-3 identical **207/400**.
+- Same data on both sides (our ranker 399,790 x 51, prvsiyan ranker 142,762 x 31). The only input difference is the RDKit:
+  E6 used `metric/rdkit-2026-3-3-wheel` cp313 → **2026.03.3**. v6 used `casmi-rdkit2025-cp313` → **2025.03.6**, because
+  the replacement `casmi-rdkit2026-cp312` cannot install on the Python **3.13** image.
+- DEC-011's claims that the `metric` wheel was deleted (404) and that Kaggle runs 3.12 are both wrong: the dataset lists
+  cp310-cp313 wheels today.
+- The in-kernel "top-3 unchanged vs E6" check compares against E6 lists computed in the same run, so it could not catch
+  this. **Parity must be checked against the previous live kernel's output.**
+
+**Fix (E7 v7, pushed 2026-10-07 ~16:30).**
+- New public dataset `shishiradhikari11/casmi-rdkit2026-cp313`: the PyPI wheel, BSD-3 LICENSE.txt,
+  sha256 9a21f96d…ceab3, same size as metric's (37,187,145 B).
+- Cell 0 prefers `rdkit-2026.3.3-*` and **asserts** `rdkit.__version__ == '2026.03.3'`; `casmi-rdkit2026-cp312` dropped.
+  The forward-model stage still pins its own 2025.3.6, as in E6.
+- Gate before submitting v7: `eng_lists.json` identical to e6_live on ~400/400 and top-3 vs the e6_live submission ~400/400.
+
+**Public notebook nursrijan/…-sovereign-zenith (0.42-0.44 family).** Ahmed v4n stack plus prvsiyan BIO
+(CC BY-NC-SA) and Ahmed datasets that are still "non-commercial, with attribution" (checked today) → not prize-eligible.
+Method ideas: GLACIER-only final re-rank (0.402 → 0.417), GLACIER on [M+H]+ only (+0.006), pool-popularity re-rank
+mu 0.15 (+0.010). Our FM bench (`results/bench/fm/analysis.txt`) does **not** favour GLACIER-only (lam_ice 0, lam_gl 1.0:
++0.003). It favours smaller weights: (0.25, 0.1) +0.042 vs our (0.5, 0.5) +0.024, mean of S1 and S2. Their result also fits
+"less forward-model weight". Candidate E7 variant after v7 parity: LAM_ICE 0.25, LAM_GL 0.1.
+
+**DEC-013 CORRECTION (2026-10-07 evening): RDKit was NOT the cause. The engine ran with 0 FP nets.**
+- (FACT) E7 v7 ran on RDKit 2026.03.3 and its engine lists still matched live E6 on only 3/400. v6 vs v7 lists were identical
+  on 398/400, so the RDKit version barely matters.
+- (FACT) Root cause: the engine runner keeps fp models with `'casmi26-fp-models-v2' in p`. DEC-011 re-hosted that dataset as
+  `shishiradhikari11/casmi-fp-models-v2`, so the filter matched nothing. Log: `engine fp models []`, `fp models: 0 single + 0 merged`.
+  E6 live had `1 single + 1 merged`. The engine lost its fingerprint channel → LB 0.320.
+- Also (FACT): our `casmi-sim-rows` copy holds only `sim_rank_rows_nofp.npz`; megayak's original also has 2 FPNets and the
+  fp16k/fppair row files. The engine reads only `sim_rank_rows_nofp.npz`, so this does not matter for E6/E7.
+- Fix (v9, pushed 2026-10-07): the filter matches `'fp-models-v2'`, and the runner asserts exactly 2 nets. v8 was an accidental
+  re-push of v7 (the patch failed its own assert). RDKit 2026 pin from v7 kept (harmless; matches E6).
+- Lesson: any dataset re-host must be followed by a parity diff of `eng_lists.json` against the previous live kernel
+  before submitting. An in-kernel self-comparison cannot catch input regressions.
+
+**DEC-014 (2026-10-07): Rebuild Ahmed's v4n engine ourselves (no waiting on relabel).**
+- User decision: re-implement and retrain v4n from train.parquet / COCONUT / PubChem / np-examples / DreaMS base, using
+  his public code only as reference. His code is kept read-only in `research/v4n_rebuild/ahmed_ref/` (git-ignored, never shipped).
+- Spec in progress: `research/v4n_rebuild/REBUILD_SPEC.md`.
+
+**DEC-014 progress (2026-10-08).**
+- (FACT) E7 v9 parity vs live E6: engine lists 400/400 identical, submission top-3 400/400, e6 lists 399/400 (one rank-8
+  swap, m_5bfac3). Engine loads 1 single + 1 merged FP net. **v9 is the version to submit.**
+- (FACT) HO_R split built: `results/v4n/split_v4r.parquet`, 21,927 train keys (296,998 spectra), enveda-180 weight 0.33
+  (39% of HO_R). This deliberately departs from the spec's x2 up-weight, because of DEC-009: the test chemistry is NP-like.
+- (FACT) FPNet R-A (CFT recipe, HO_R held out, seed 1, merge_p 0.3) is training on `binayaadhikari13/casmi-cft-hor-a`.
+  R-B is staged for `akritirijal04/casmi-cft-hor-b` once her quota resets on 10 Oct (Akriti's quota was exhausted on 10-07).
+- (FACT) Phase A engine (`research/v4n_rebuild/engine/`, ours, MIT): V0 keys 2000/2000 equal; V1 P2 275,810 rows, pool 548,856
+  (COCONUT ≤ 480 Da only; tail build running); V2 2,539,608 spectra, 0 recount diffs. V3 parity vs his engine as a local
+  oracle (148 non-tie queries): candidate sets 148/148, feature rows 17,316/17,330 equal; the 45 tie queries differ
+  because his merged-view adduct choice depends on set order (his own two runs disagree). Median 1.5 s/query on CPU.
+- Phase B (simulation driver + ranker v0 pilot on ho2 keys with cft_ho2) started.
+
+**E7 v9 leaderboard (FACT, 2026-10-08):** 0.363 vs E6 0.360 (+0.003; DEC-010 expected +0.005 to +0.015; within LB noise). New best eligible score. The Class-3 block at ranks 4-8 does no harm and gains little.
+
+**DEC-014 result (FACT, 2026-10-09):** v4n rebuilt engine e9-sub1 v4 (our engine + R-A + ranker_v0, no FM/PubChem) scored **0.341** on the public LB (his v1 engine + ranker: 0.354). Kaggle CPU 2.2 s/mol. The first hang (v2) came from workers crashing at init on a missing pool_fp_raw.npy, which multiprocessing respawns forever; the notebook now runs a smoke test first.

@@ -38,3 +38,6 @@ research/scratch_*/
 research/envs/
 *.ckpt
 *.whl
+
+# third-party reference code (ahmedberatozer, non-commercial label): read-only, never commit or ship
+research/v4n_rebuild/ahmed_ref/
